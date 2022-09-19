@@ -21,9 +21,17 @@ function App() {
 
       <br></br>
       <br></br>
-      <Avatar size={Avatar.size.SMALL}/>
-      <Avatar size={Avatar.size.MEDIUM}/>
-      <Avatar size={Avatar.size.LARGE}/>
+      <Avatar size={Avatar.size.SMALL} status={Avatar.status.INVISIBLE}/>
+      <Avatar size={Avatar.size.MEDIUM} status={Avatar.status.INVISIBLE}/>
+      <Avatar size={Avatar.size.LARGE} status={Avatar.status.INVISIBLE}/>
+      <br></br>
+      <Avatar size={Avatar.size.SMALL} status={Avatar.status.OFFLINE}/>
+      <Avatar size={Avatar.size.MEDIUM} status={Avatar.status.OFFLINE}/>
+      <Avatar size={Avatar.size.LARGE} status={Avatar.status.OFFLINE}/>
+      <br></br>
+      <Avatar size={Avatar.size.SMALL} status={Avatar.status.ONLINE}/>
+      <Avatar size={Avatar.size.MEDIUM} status={Avatar.status.ONLINE}/>
+      <Avatar size={Avatar.size.LARGE} status={Avatar.status.ONLINE}/>
 
     </div>
   );

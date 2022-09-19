@@ -3,6 +3,10 @@ enum Size {
     MEDIUM,
     LARGE,
   }
-  
-  export { Size };
+  enum Status{
+    INVISIBLE,
+    OFFLINE,
+    ONLINE
+  }
+  export { Size, Status };
   
