@@ -16,12 +16,11 @@ function App() {
 
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.SMALL}/>
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.MEDUIM}/>
-      <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.LARGE}/>
 
       <br></br>
       <br></br>
 
-      <Badge label='Gray Badge' bgColor='bg-gray-100 text-gray-800' size='px-2.5 py-0.5 text-xs font-medium'/>
+      {/* <Badge label='Gray Badge' bgColor='bg-gray-100 text-gray-800' size='px-2.5 py-0.5 text-xs font-medium'/>
       <Badge label='Green Badge ' bgColor='bg-green-100 text-green-800' size='px-2.5 py-0.5 text-xs font-medium'/>
       <Badge label='Blue Badge' bgColor='bg-blue-100 text-blue-800' size='px-2.5 py-0.5 text-xs font-medium'/>
       <Badge label='Pink Badge' bgColor='bg-pink-100 text-pink-800' size='px-2.5 py-0.5 text-xs font-medium'/>
@@ -29,7 +28,13 @@ function App() {
       <Badge label='Gray Badge' bgColor='bg-gray-100 text-gray-800' size='px-3 py-0.5 text-sm font-medium'/>
       <Badge label='Green Badge ' bgColor='bg-green-100 text-green-800' size='px-3 py-0.5 text-sm font-medium'/>
       <Badge label='Blue Badge' bgColor='bg-blue-100 text-blue-800' size='px-3 py-0.5 text-sm font-medium'/>
-      <Badge label='Pink Badge' bgColor='bg-pink-100 text-pink-800' size='px-3 py-0.5 text-sm font-medium'/>
+      <Badge label='Pink Badge' bgColor='bg-pink-100 text-pink-800' size='px-3 py-0.5 text-sm font-medium'/> */}
+      <Badge children='Green Badge' size={Badge.size.SMALL} color ={Badge.color.GREEN} />
+      <Badge children='Green Badge' size={Badge.size.LARGE} color ={Badge.color.GREEN} />
+      <Badge children='Blue Badge' size={Badge.size.SMALL} color ={Badge.color.BLUE} />
+      <Badge children='Blue Badge' size={Badge.size.LARGE} color ={Badge.color.BLUE} />
+
+
       <br></br>
       <br></br>
       <Avatar size='h-6 w-6'/>

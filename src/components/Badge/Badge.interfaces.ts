@@ -1,5 +1,8 @@
+import { ReactNode } from 'react'
+import {Color, Size} from './Badge.enum'
+
 export interface BadgeProps {
-    bgColor?:string,
-    label:string,
-    size?:string
+    color:Color,
+    children:ReactNode,
+    size:Size
 }
