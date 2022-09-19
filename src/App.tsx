@@ -37,8 +37,10 @@ function App() {
 
       <br></br>
       <br></br>
-      <Avatar size='h-6 w-6'/>
-      <Avatar size='h-8 w-8'/>
+      <Avatar size={Avatar.size.SMALL}/>
+      <Avatar size={Avatar.size.MEDIUM}/>
+      <Avatar size={Avatar.size.LARGE}/>
+
     </div>
   );
 }

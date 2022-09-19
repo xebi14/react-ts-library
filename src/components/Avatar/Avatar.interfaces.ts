@@ -1,4 +1,6 @@
+import {Size} from './Avatar.enum';
+
 export interface AvatarProps{
-    size?: string,
-    status?:string
+    size: Size,
+    
 }
