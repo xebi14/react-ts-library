@@ -9,8 +9,9 @@ function App() {
       
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.SMALL}/>
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.MEDUIM}/>
-
       <br></br>
+      <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.MEDUIM}/>
+      <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.SMALL}/>
       <br></br>
 
       <Badge children='Green Badge' size={Badge.size.SMALL} color ={Badge.color.GREEN} />
