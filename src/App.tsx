@@ -2,6 +2,7 @@ import './App.css';
 import { Button } from './components/Button/Button';
 import { Badge } from './components/Badge';
 import { Avatar } from './components/Avatar';
+import { Input } from './components/Input';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
       <Avatar size={Avatar.size.SMALL} status={Avatar.status.ONLINE}/>
       <Avatar size={Avatar.size.MEDIUM} status={Avatar.status.ONLINE}/>
       <Avatar size={Avatar.size.LARGE} status={Avatar.status.ONLINE}/>
+      <br></br>
+      <Input />
 
     </div>
   );
