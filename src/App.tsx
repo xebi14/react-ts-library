@@ -11,7 +11,7 @@ function App() {
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.SMALL} loader={Button.loader.SHOW}/>
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.MEDUIM}/>
       <br></br>
-      <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.MEDUIM}/>
+      <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.MEDUIM} loader={Button.loader.HIDE}/>
       <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.SMALL}/>
       <br></br>
 
@@ -35,7 +35,9 @@ function App() {
       <Avatar size={Avatar.size.MEDIUM} status={Avatar.status.ONLINE}/>
       <Avatar size={Avatar.size.LARGE} status={Avatar.status.ONLINE}/>
       <br></br>
-      <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here' />
+      <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here'/>
+      <br></br>
+      <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here' helpText={Input.helpText.ON}/>
 
     </div>
   );
