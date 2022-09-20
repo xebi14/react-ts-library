@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       
-      <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.SMALL}/>
+      <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.SMALL} loader={Button.loader.SHOW}/>
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.MEDUIM}/>
       <br></br>
       <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.MEDUIM}/>
@@ -35,7 +35,7 @@ function App() {
       <Avatar size={Avatar.size.MEDIUM} status={Avatar.status.ONLINE}/>
       <Avatar size={Avatar.size.LARGE} status={Avatar.status.ONLINE}/>
       <br></br>
-      <Input />
+      <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here' />
 
     </div>
   );

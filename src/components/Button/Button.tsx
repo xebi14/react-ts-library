@@ -1,5 +1,5 @@
 import { ButtonProps } from "./Button.interfaces";
-import { Variant, Size } from "./Button.enum";
+import { Variant, Size, Loader } from "./Button.enum";
 
 const VARIANT_MAPS: Record<Variant, string> = {
   [Variant.PRIMARY]:
@@ -14,15 +14,20 @@ const SIZE_MAPS: Record<Size, string> = {
   [Size.LARGE]: "px-6 py-3 text-base",
 };
 
-export const Button = ({ children, variant, size }: ButtonProps) => {
+const LOADER_MAPS: Record<Loader, Boolean> = {
+  [Loader.HIDE]: false,
+  [Loader.SHOW]: true,
+};
+export const Button = ({ children, variant, size, loader }: ButtonProps) => {
   return (
     <button
       type="button"
       className={`inline-flex items-center rounded-md border border-transparent font-medium  shadow-sm  focus:outline-none focus:ring-2  focus:ring-offset-2 m-3.5 ${VARIANT_MAPS[variant]} ${SIZE_MAPS[size]}`}
     >
-      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-900"></div>
-
-      {children}
+      {loader ? (
+        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-900"></div>
+      ) : null}
+      {!loader ? children : "  Loading"}
     </button>
   );
 };
@@ -30,8 +35,10 @@ export const Button = ({ children, variant, size }: ButtonProps) => {
 Button.defaultProps = {
   variant: Variant.PRIMARY,
   size: Size.SMALL,
+  loader: Loader.HIDE,
 };
 Button.variant = Variant;
 Button.size = Size;
+Button.loader = Loader;
 
 console.log("Button", Button);

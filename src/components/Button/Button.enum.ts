@@ -8,4 +8,8 @@ enum Size {
   LARGE,
 }
 
-export { Variant, Size };
+enum Loader{
+  HIDE,
+  SHOW
+}
+export { Variant, Size, Loader };

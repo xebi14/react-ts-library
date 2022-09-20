@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import {Variant, Size} from './Button.enum'
+import {Variant, Size, Loader} from './Button.enum'
 
 
 export interface ButtonProps  {
@@ -8,5 +8,6 @@ export interface ButtonProps  {
     variant: Variant;
     children?: ReactNode;
     size: Size;
+    loader: Loader
 }
 
