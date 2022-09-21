@@ -35,9 +35,15 @@ function App() {
       <Avatar size={Avatar.size.MEDIUM} status={Avatar.status.ONLINE}/>
       <Avatar size={Avatar.size.LARGE} status={Avatar.status.ONLINE}/>
       <br></br>
+      <div className='w-80 m-8'>
       <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here'/>
       <br></br>
-      <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here' helpText={Input.helpText.ON}/>
+      <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here' helperText="This is helper Text"/>
+      <br></br>
+      <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here' error="This is Error Text"/>
+      <br></br>
+      <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here' disabled />
+      </div>
 
     </div>
   );
