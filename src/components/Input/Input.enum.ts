@@ -5,18 +5,21 @@
 // }
 
 enum HelpText{
-    ON,
-    OFF
+    OFF,
+    ON 
+     
 }
 
 enum ValidationError{
-    ON,
-    OFF
+    OFF,
+    ON
+    
 }
 
 enum Disabled{
-    ON,
-    OFF
+    OFF,
+    ON
+    
 }
 
 
