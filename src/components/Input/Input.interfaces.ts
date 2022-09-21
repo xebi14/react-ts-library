@@ -1,12 +1,13 @@
 import { ReactNode } from "react";
-// import { HelpText, ValidationError, Disabled } from "./Input.enum";
+ import { InputTypes } from "./Input.enum";
 
 export interface InputProps  {
     inputLabel?: string,
     inputPlaceholder?: string,
     helperText?: string,
     error?: string,
-    disabled? : boolean
+    disabled? : boolean,
+    inputType?: InputTypes
     // ValidationError?: ValidationError,
     // disabled?: Disabled
 

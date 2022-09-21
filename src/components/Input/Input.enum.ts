@@ -6,23 +6,27 @@
 
 // enum HelpText{
 //     OFF,
-//     ON 
-     
+//     ON
+
 // }
 
 // enum ValidationError{
 //     OFF,
 //     ON
-    
+
 // }
 
 // enum Disabled{
 //     OFF,
 //     ON
-    
+
 // }
 
+enum InputTypes {
+  NUMBER,
+  STRING,
+  EMAIL,
+  PASSWORD
+}
 
-
-
-export {}
+export { InputTypes }

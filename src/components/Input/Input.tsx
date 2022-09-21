@@ -1,5 +1,5 @@
 import { InputProps } from "./Input.interfaces"
-// import { HelpText, ValidationError, Disabled } from "./Input.enum"
+ import { InputTypes } from "./Input.enum"
 
 // const STATE_MAPS : Record<InputStates, boolean> = {
 //     [InputStates.WITH_LABEL_HELP_TEXT] : true,
@@ -22,12 +22,19 @@ import { InputProps } from "./Input.interfaces"
 //   [Disabled.ON]: true,
 // }
 
-export const Input = ({ inputLabel, inputPlaceholder, helperText, error, disabled }: InputProps) => {
+const InputType_Map : Record< InputTypes,string > ={
+    [InputTypes.EMAIL]: "email",
+    [InputTypes.NUMBER]: "number",
+    [InputTypes.STRING]: "text",
+    [InputTypes.PASSWORD]: "password"
+}
+
+export const Input = ({ inputLabel, inputPlaceholder, helperText, error, disabled, inputType }: InputProps) => {
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700">{inputLabel}</label>
       <div className="mt-1">
-        <input type="email" name="email" id="email" className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder={inputPlaceholder} disabled={disabled}></input>
+        <input type={InputType_Map[inputType as keyof typeof InputType_Map]} name="email" id="email" className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder={inputPlaceholder} disabled={disabled}></input>
       </div>
       {helperText ? (
         <p className="mt-2 text-sm text-gray-500" id="email-description">
@@ -44,13 +51,10 @@ export const Input = ({ inputLabel, inputPlaceholder, helperText, error, disable
   )
 }
 
-// Input.defaultProps = {
-//   helpText: HelpText.OFF,
-//   validationError: ValidationError.OFF,
-//   disabled: Disabled.OFF,
-// }
-// Input.helpText = HelpText
-// Input.validationError = ValidationError
-// Input.disabled = Disabled
+Input.defaultProps = {
+  inputType: InputTypes.STRING
+}
+ Input.inputType = InputTypes
+
 
 console.log("Input", Input)
