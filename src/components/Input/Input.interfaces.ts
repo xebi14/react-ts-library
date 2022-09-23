@@ -7,7 +7,7 @@ export interface InputProps  {
     helperText?: string,
     error?: string,
     disabled? : boolean,
-    inputType?: InputTypes
+    inputType: InputTypes
     // ValidationError?: ValidationError,
     // disabled?: Disabled
 

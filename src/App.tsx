@@ -3,7 +3,7 @@ import { Button } from './components/Button/Button';
 import { Badge } from './components/Badge';
 import { Avatar } from './components/Avatar';
 import { Input } from './components/Input';
-
+import { Toggle } from './components/Toggle';
 function App() {
   return (
     <div className="App">
@@ -44,7 +44,8 @@ function App() {
       <br></br>
       <Input inputLabel='Email' inputPlaceholder='Enter Your Email Here' disabled />
       </div>
-
+      <br></br>
+      <Toggle />
     </div>
   );
 }
