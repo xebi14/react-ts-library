@@ -5,6 +5,8 @@ import { Avatar } from "./components/Avatar"
 import { Input } from "./components/Input"
 import { Toggle } from "./components/Toggle"
 import { Alert } from "./components/Alert"
+import { Checkbox } from "./components/Checkbox"
+
 function App() {
   return (
     <div className="App">
@@ -55,6 +57,14 @@ function App() {
       <br></br>
       <Alert listError={["first Item", "second", "3rd item"]} />
       <br></br>
+      <br></br>
+      <Checkbox
+        listItems={[
+          { heading: "Heading 1 ", description: " Detail 1" },
+          { heading: " Heading 2 ", description: " Details 2" },
+          { heading: " Heading 3 ", description: " Details 3" },
+        ]}
+      />
     </div>
   )
 }
