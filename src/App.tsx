@@ -6,6 +6,7 @@ import { Input } from "./components/Input"
 import { Toggle } from "./components/Toggle"
 import { Alert } from "./components/Alert"
 import { Checkbox } from "./components/Checkbox"
+import { Variant } from "./components/Checkbox/Checkbox.enum"
 
 function App() {
   return (
@@ -66,6 +67,24 @@ function App() {
           { heading: " Heading 2 ", description: " Details 2" },
           { heading: " Heading 3 ", description: " Details 3" },
         ]}
+      />
+      <br></br>
+      <Checkbox
+        listItems={[
+          { heading: "Heading 1 ", description: " Detail 1" },
+          { heading: " Heading 2 ", description: " Details 2" },
+          { heading: " Heading 3 ", description: " Details 3" },
+        ]}
+        variant={Checkbox.variant.BOX_ON_RIGHT}
+      />
+      <br></br>
+      <Checkbox
+        listItems={[
+          { heading: "Heading 1 ", description: " Detail 1" },
+          { heading: " Heading 2 ", description: " Details 2" },
+          { heading: " Heading 3 ", description: " Details 3" },
+        ]}
+        variant={Checkbox.variant.INLINE_DESC}
       />
     </div>
   )
