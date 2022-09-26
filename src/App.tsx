@@ -55,8 +55,10 @@ function App() {
       <Toggle variant={Toggle.variant.IconToggle} />
       <br></br>
       <br></br>
-      <Alert listError={["first Item", "second", "3rd item"]} />
+      <Alert listError={["first Item", "second", "3rd item"]} variant={Alert.variant.WITH_LIST} />
       <br></br>
+      <Alert variant={Alert.variant.WITH_DESC} listError={["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit metus vitae erat viverra, vitae mattis lorem gravida. Fusce eget vulputate arcu. Praesent vitae euismod urna. Sed eget laoreet turpis."]} />
+
       <br></br>
       <Checkbox
         listItems={[

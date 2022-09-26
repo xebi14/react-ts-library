@@ -1,6 +1,6 @@
-import { Variants } from "./Alert.enum"
+import { Variant } from "./Alert.enum"
 
 export interface AlertProps {
-  variant?: Variants
+  variant?: Variant
   listError: string[]
 }

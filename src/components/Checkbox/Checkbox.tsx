@@ -1,5 +1,4 @@
 import { CheckboxProps } from "./Checkbox.interfaces"
-import { CheckboxDetails } from "./CheckboxDetails.interface"
 
 export const Checkbox = ({ listItems }: CheckboxProps) => {
   return (
