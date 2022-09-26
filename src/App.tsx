@@ -11,7 +11,7 @@ function App() {
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.SMALL} loader={Button.loader.SHOW}/>
       <Button children ='Secondary Button' variant={Button.variant.SECONDARY} size ={Button.size.MEDUIM}/>
       <br></br>
-      <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.MEDUIM} loader={Button.loader.HIDE}/>
+      <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.MEDUIM} loader={Button.loader.SHOW}/>
       <Button children ='Primary Button' variant={Button.variant.PRIMARY} size ={Button.size.SMALL}/>
       <br></br>
 

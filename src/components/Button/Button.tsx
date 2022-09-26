@@ -22,12 +22,12 @@ export const Button = ({ children, variant, size, loader }: ButtonProps) => {
   return (
     <button
       type="button"
-      className={`inline-flex items-center rounded-md border border-transparent font-medium  shadow-sm  focus:outline-none focus:ring-2  focus:ring-offset-2 m-3.5 ${VARIANT_MAPS[variant]} ${SIZE_MAPS[size]}`}
+      className={`h-12 min-h-full w-44 inline-flex justify-center items-center rounded-md border border-transparent font-medium  shadow-sm  focus:outline-none focus:ring-2  focus:ring-offset-2 m-3.5 ${VARIANT_MAPS[variant]} ${SIZE_MAPS[size]}`}
     >
       {loader ? (
-        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-900"></div>
+        <div className={`animate-spin rounded-full h-4 w-4 border-b-2 ${variant === Variant.PRIMARY? "border-white":"border-indigo-700"}`}></div>
       ) : null}
-      {!loader ? children : "  Loading"}
+      {!loader ? children : ""}
     </button>
   );
 };
