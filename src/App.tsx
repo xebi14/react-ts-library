@@ -1,4 +1,5 @@
 import "./App.css"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Button } from "./components/Button/Button"
 import { Badge } from "./components/Badge"
 import { Avatar } from "./components/Avatar"
@@ -6,11 +7,20 @@ import { Input } from "./components/Input"
 import { Toggle } from "./components/Toggle"
 import { Alert } from "./components/Alert"
 import { Checkbox } from "./components/Checkbox"
-import { Variant } from "./components/Checkbox/Checkbox.enum"
+import { SelectMenu } from "./components/SelectMenu"
+import { Form } from "./pages/Form"
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route path="Form" element={<Form />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
       <Button children="Secondary Button" variant={Button.variant.SECONDARY} size={Button.size.SMALL} loader={Button.loader.SHOW} />
       <Button children="Secondary Button" variant={Button.variant.SECONDARY} size={Button.size.MEDUIM} />
       <br></br>
@@ -86,6 +96,9 @@ function App() {
         ]}
         variant={Checkbox.variant.INLINE_DESC}
       />
+      <br></br>
+      <br></br>
+      <SelectMenu menuLable="Location" menuItems={["United States", "Canada", "United Kingdom", "Australia"]} />
     </div>
   )
 }
