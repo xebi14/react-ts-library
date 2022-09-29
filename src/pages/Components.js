@@ -7,6 +7,7 @@ import { Alert } from "../components/Alert"
 import { Checkbox } from "../components/Checkbox"
 import { SelectMenu } from "../components/SelectMenu"
 import { Radio } from "../components/Radio"
+import { Textarea } from "../components/Textarea"
 
 function Components() {
   return (
@@ -211,6 +212,9 @@ function Components() {
           { id: 2, heading: " Heading 2 ", description: " Details 2" },
         ]}
       />
+      <br></br>
+      <br></br>
+      <Textarea title="Add your comment here" />
     </div>
   )
 }

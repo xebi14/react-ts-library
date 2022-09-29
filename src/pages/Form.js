@@ -1,9 +1,6 @@
 import { Button } from "../components/Button/Button"
-import { Badge } from "../components/Badge"
-import { Avatar } from "../components/Avatar"
+import { Radio } from "../components/Radio"
 import { Input } from "../components/Input"
-import { Toggle } from "../components/Toggle"
-import { Alert } from "../components/Alert"
 import { Checkbox } from "../components/Checkbox"
 import { SelectMenu } from "../components/SelectMenu"
 export const Form = () => {
@@ -249,48 +246,14 @@ export const Form = () => {
                   These are delivered via SMS to your mobile phone.
                 </p>
                 <div className="mt-4 space-y-4">
-                  <div className="flex items-center">
-                    <input
-                      id="push-everything"
-                      name="push-notifications"
-                      type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <label
-                      htmlFor="push-everything"
-                      className="ml-3 block text-sm font-medium text-gray-700"
-                    >
-                      Everything
-                    </label>
-                  </div>
-                  <div className="flex items-center">
-                    <input
-                      id="push-email"
-                      name="push-notifications"
-                      type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <label
-                      htmlFor="push-email"
-                      className="ml-3 block text-sm font-medium text-gray-700"
-                    >
-                      Same as email
-                    </label>
-                  </div>
-                  <div className="flex items-center">
-                    <input
-                      id="push-nothing"
-                      name="push-notifications"
-                      type="radio"
-                      className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                    />
-                    <label
-                      htmlFor="push-nothing"
-                      className="ml-3 block text-sm font-medium text-gray-700"
-                    >
-                      No push notifications
-                    </label>
-                  </div>
+                  <Radio
+                    radioItems={[
+                      { id: 1, heading: "Everything " },
+                      { id: 2, heading: " Same as email " },
+                      { id: 3, heading: " No push notifications " },
+                    ]}
+                    variant={Radio.variant.LIST_DESC}
+                  />
                 </div>
               </fieldset>
             </div>
