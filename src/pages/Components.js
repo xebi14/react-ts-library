@@ -92,6 +92,9 @@ function Components() {
       <br></br>
       <br></br>
       <SelectMenu menuLable="Assigned to" menuItems={[{id:1, item:"Wade Cooper"}, {id:2 ,item:"Arlene Mccoy"}, {id:3 , item:"Devon Webb"},{id:4, item: "Tom Cook"}]} variant={SelectMenu.variant.SIMPLE_CUSTOM} />
+      <br></br>
+      <br></br>
+      <SelectMenu menuLable="Assigned to" menuItems={[{id:1, item:"Wade Cooper"}, {id:2 ,item:"Arlene Mccoy"}, {id:3 , item:"Devon Webb"},{id:4, item: "Tom Cook"}]} variant={SelectMenu.variant.CHECK_ON_LEFT} />
     </div>
   )
 }
