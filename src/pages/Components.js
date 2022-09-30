@@ -23,6 +23,11 @@ function Components() {
         variant={Button.variant.SECONDARY}
         size={Button.size.MEDUIM}
       />
+      <Button
+        children="Secondary Button"
+        variant={Button.variant.SECONDARY}
+        size={Button.size.LARGE}
+      />
       <br></br>
       <Button
         children="Primary Button"
