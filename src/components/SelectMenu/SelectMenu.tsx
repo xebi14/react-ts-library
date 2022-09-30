@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react"
+import { Fragment, useState, useEffect } from "react"
 import { Listbox, Transition } from "@headlessui/react"
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid"
 import { SelectMenuProps } from "./SelectMenu.interfaces"
@@ -14,14 +14,18 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ")
 }
 
-export const SelectMenu = ({ menuItems, menuLable, variant = Variant.SIMPLE_NATIVE }: SelectMenuProps) => {
+export const SelectMenu = ({ menuItems, menuLable, variant = Variant.SIMPLE_NATIVE, value, onChange }: SelectMenuProps) => {
   const [selected, setSelected] = useState(menuItems[0])
+  const handleChange = (selectedOption: any) => {
+    setSelected(selectedOption)
+    if (onChange) onChange(selectedOption)
+  }
 
   switch (VARIANT_MAP[variant]) {
     case "SimpleCustom":
       return (
         <div>
-          <Listbox value={selected} onChange={setSelected}>
+          <Listbox value={selected} onChange={handleChange}>
             {({ open }) => (
               <>
                 <Listbox.Label className="block text-sm font-medium text-gray-700">Assigned to</Listbox.Label>
@@ -62,7 +66,7 @@ export const SelectMenu = ({ menuItems, menuLable, variant = Variant.SIMPLE_NATI
     case "CheckOnLeft":
       return (
         <div>
-          <Listbox value={selected} onChange={setSelected}>
+          <Listbox value={selected} onChange={handleChange}>
             {({ open }) => (
               <>
                 <Listbox.Label className="block text-sm font-medium text-gray-700">Assigned to</Listbox.Label>

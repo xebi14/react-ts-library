@@ -29,15 +29,17 @@ const InputType_Map: Record<InputTypes, string> = {
   [InputTypes.PASSWORD]: "password",
 }
 
-export const Input = ({ inputLabel, inputPlaceholder, helperText, error, disabled, inputType }: InputProps) => {
+export const Input = ({ inputLabel, inputPlaceholder, helperText, error, disabled, inputType, name, value, onChange }: InputProps) => {
   return (
     <div>
       <label className="block text-sm font-medium text-gray-700">{inputLabel}</label>
       <div className="mt-1">
         <input
           type={InputType_Map[inputType as keyof typeof InputType_Map]}
-          name="email"
+          name={name}
           id="email"
+          value={value}
+          onChange={onChange}
           className={`h-10 block w-full rounded-md ${error ? "border-red-300 pr-10 text-red-900 placeholder-red-300 focus:border-red-500 focus:outline-none focus:ring-red-500" : "border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"} sm:text-sm`}
           placeholder={inputPlaceholder}
           disabled={disabled}

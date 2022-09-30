@@ -7,7 +7,7 @@ const VARIANT_MAPS: Record<Variant, string> = {
   [Variant.AVATAR_ACTION]: "AvatarAction",
 }
 
-export const Textarea = ({ variant, title, placeholderText }: TextareaProps) => {
+export const Textarea = ({ variant, title, name, value, onChange, placeholderText }: TextareaProps) => {
   switch (VARIANT_MAPS[variant]) {
     case "SimpleAction":
       return <div></div>
@@ -21,7 +21,7 @@ export const Textarea = ({ variant, title, placeholderText }: TextareaProps) => 
             {title}
           </label>
           <div className="mt-1">
-            <textarea rows={4} name="comment" id="comment" className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" defaultValue={""} />
+            <textarea rows={4} name={name} onChange={onChange} value={value} id="comment" className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" defaultValue={""} />
           </div>
         </div>
       )

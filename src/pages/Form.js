@@ -3,7 +3,25 @@ import { Radio } from "../components/Radio"
 import { Input } from "../components/Input"
 import { Checkbox } from "../components/Checkbox"
 import { SelectMenu } from "../components/SelectMenu"
+import { Textarea } from "../components/Textarea"
+import { useForm, Controller } from "react-hook-form"
+
 export const Form = () => {
+  const {
+    control: formControl,
+    getValues: getFormValues,
+    setValue: setFormValue,
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      about: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      country: {},
+    },
+  })
+
   return (
     <div>
       <form className="space-y-8 divide-y divide-gray-200">
@@ -42,24 +60,21 @@ export const Form = () => {
               </div>
 
               <div className="sm:col-span-6">
-                <label
-                  htmlFor="about"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  About
-                </label>
-                <div className="mt-1">
-                  <textarea
-                    id="about"
-                    name="about"
-                    rows={3}
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                    defaultValue={""}
-                  />
-                </div>
-                <p className="mt-2 text-sm text-gray-500">
-                  Write a few sentences about yourself.
-                </p>
+                <Controller
+                  name="about"
+                  control={formControl}
+                  render={({ field }) => {
+                    let { onChange, value, name } = field
+                    return (
+                      <Textarea
+                        title="About"
+                        onChange={onChange}
+                        value={value}
+                        name={name}
+                      />
+                    )
+                  }}
+                />
               </div>
 
               <div className="sm:col-span-6">
@@ -146,29 +161,85 @@ export const Form = () => {
             </div>
             <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-3">
-                <Input inputLabel="First Name" inputPlaceholder="John" />
-              </div>
-
-              <div className="sm:col-span-3">
-                <Input inputLabel="Last Name" inputPlaceholder="Doe" />
-              </div>
-
-              <div className="sm:col-span-4">
-                <Input
-                  inputLabel="Email Address"
-                  inputPlaceholder="johndoe@website.com"
+                <Controller
+                  name="firstName"
+                  control={formControl}
+                  render={({ field }) => {
+                    let { onChange, value, name } = field
+                    return (
+                      <Input
+                        inputLabel="First Name"
+                        inputPlaceholder="John"
+                        onChange={onChange}
+                        value={value}
+                        name={name}
+                      />
+                    )
+                  }}
                 />
               </div>
 
               <div className="sm:col-span-3">
-                <SelectMenu
-                  menuLable="Country"
-                  menuItems={[
-                    { id: 1, item: "United States" },
-                    { id: 2, item: "Canada" },
-                    { id: 3, item: "United Kingdom" },
-                    { id: 4, item: "Australia" },
-                  ]}
+                <Controller
+                  name="lastName"
+                  control={formControl}
+                  render={({ field }) => {
+                    let { onChange, value, name } = field
+                    return (
+                      <Input
+                        inputLabel="Last Name"
+                        inputPlaceholder="Wick"
+                        onChange={onChange}
+                        value={value}
+                        name={name}
+                      />
+                    )
+                  }}
+                />
+              </div>
+
+              <div className="sm:col-span-4">
+                <Controller
+                  name="email"
+                  control={formControl}
+                  render={({ field }) => {
+                    let { onChange, value, name } = field
+                    return (
+                      <Input
+                        inputLabel="Email Address"
+                        inputPlaceholder="johndoe@website.com"
+                        onChange={onChange}
+                        value={value}
+                        name={name}
+                        inputType={Input.inputType.EMAIL}
+                      />
+                    )
+                  }}
+                />
+              </div>
+
+              <div className="sm:col-span-3">
+                <Controller
+                  name="country"
+                  control={formControl}
+                  render={({ field }) => {
+                    let { onChange, value, name } = field
+                    return (
+                      <SelectMenu
+                        variant={SelectMenu.variant.SIMPLE_CUSTOM}
+                        menuLable="Country"
+                        onChange={onChange}
+                        value={value}
+                        name={name}
+                        menuItems={[
+                          { id: 1, item: "United States" },
+                          { id: 2, item: "Canada" },
+                          { id: 3, item: "United Kingdom" },
+                          { id: 4, item: "Australia" },
+                        ]}
+                      />
+                    )
+                  }}
                 />
               </div>
 

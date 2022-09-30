@@ -5,4 +5,6 @@ export interface SelectMenuProps {
   menuLable: string
   menuItems: SelectMenuItems[]
   variant?: Variant
+  value: string
+  onChange: (value: string) => void
 }
