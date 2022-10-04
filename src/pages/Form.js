@@ -1,7 +1,7 @@
 import { Button } from "../components/Button/Button"
 import { Radio } from "../components/Radio"
 import { Input } from "../components/Input"
-import { Checkbox } from "../components/Checkbox"
+import { Checkbox } from "../components/Checkbox/index"
 import { SelectMenu } from "../components/SelectMenu"
 import { Textarea } from "../components/Textarea"
 import { useForm, Controller } from "react-hook-form"
@@ -19,6 +19,10 @@ export const Form = () => {
       lastName: "",
       email: "",
       country: {},
+      checkBox: true,
+      comments: "",
+      candidates: "",
+      offers: "",
     },
   })
 
@@ -287,26 +291,56 @@ export const Form = () => {
                   By Email
                 </div>
                 <div className="mt-4 space-y-4">
-                  <Checkbox
-                    listItems={[
-                      {
-                        heading: "Comments",
-                        description:
-                          "Get notified when someones posts a comment on a posting.",
-                      },
-                      {
-                        heading: "Candidates",
-                        description:
-                          "Get notified when a candidate applies for a job.",
-                      },
-                      {
-                        heading: " Offers",
-                        description:
-                          "Get notified when a candidate accepts or rejects an offer.",
-                      },
-                    ]}
-                    variant={Checkbox.variant.WITH_DESC}
-                  />
+                  {["comments", "candidates", "offers"].map((name) => (
+                    <Controller
+                      key={name}
+                      name={name}
+                      as={
+                        <FormControlLabel
+                          control={<Checkbox value={name} name={name} />}
+                          label={name}
+                        />
+                      }
+                      valueName="checked"
+                      type="checkbox"
+                      onChange={([e]) => {
+                        return e.target.checked ? e.target.value : ""
+                      }}
+                      control={control}
+                    />
+                  ))}
+                  {/* <Controller
+                    name="checkBox"
+                    control={formControl}
+                    render={({ field }) => {
+                      let { onChange, value, name } = field
+                      return (
+                        <Checkbox
+                          onChange={onChange}
+                          value={value}
+                          name={name}
+                          listItems={[
+                            {
+                              heading: "Comments",
+                              description:
+                                "Get notified when someones posts a comment on a posting.",
+                            },
+                            {
+                              heading: "Candidates",
+                              description:
+                                "Get notified when a candidate applies for a job.",
+                            },
+                            {
+                              heading: " Offers",
+                              description:
+                                "Get notified when a candidate accepts or rejects an offer.",
+                            },
+                          ]}
+                          variant={Checkbox.variant.WITH_DESC}
+                        />
+                      )
+                    }}
+                  /> */}
                 </div>
               </fieldset>
               <fieldset className="mt-6">
